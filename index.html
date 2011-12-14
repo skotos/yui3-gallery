@@ -31,10 +31,7 @@
 </head>
 
 <body>
-  <a href="https://github.com/skotos/yui3-gallery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
   <div id="container">
-
     <div class="download">
       <a href="https://github.com/skotos/yui3-gallery/zipball/master">
         <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
@@ -61,36 +58,23 @@
         <button id='loginform_button' onclick='alert("Access Denied!");'>Log In</button>
       </div>
       <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
-      <script type="text/javascript">
+   <script type="text/javascript">
       YUI({
+        combine:true,
         groups: {
-          gallery: {
+          sp: {
+            base: 'build/',
             combine: false,
-            base: "http://skotos.github.com/yui3-gallery/build/",
-            root: "http://skotos.github.com/yui3-gallery/build/",
-            comboBase: "http://skotos.github.com/phploader/phploader/combo.php?",
             modules: {
-              'gallery-textfield-labelled' : {
-                path : 'gallery-textfield-labelled/gallery-textfield-labelled-min.js',
-                type : 'js',
-                requires: ['node','event','event-key','widget']
-              }
-            }
-          },
-          gallerycss: {
-            combine: false,
-            comboBase: "http://skotos.github.com/phploader/phploader/combo.php?",
-            root: "http://skotos.github.com/yui3-gallery/build/",
-            base: "http://skotos.github.com/yui3-gallery/build/",
-            modules: {
-              'gallerycss-textfield-labelled' : {
-                path : 'gallery-textfield-labelled/assets/skins/sam/gallery-textfield-labelled-skin.css',
-                type : 'css'
+              "gallery-textfield-labelled": {
+                path: 'gallery-textfield-labelled/gallery-textfield-labelled.js',
+                requires: ['node', 'widget', 'event', 'event-key'],
+                skinnable: true
               }
             }
           }
         }
-      }).use('node', 'gallery-textfield-labelled','gallerycss-textfield-labelled', function(Y){
+      }).use('gallery-textfield-labelled', function(Y) {
         var uBox = new TextfieldLabelled({
           srcNode: '#ubox',
           label: "Username"
@@ -100,7 +84,7 @@
           label: "Password"
         }).render();
       });
-      </script>
+    </script>
 
     <h2>Progress</h2>
     <p> This project is still in the alpha stage.  Best to keep an eye on yuilibrary.com to see if and when it makes it into the gallery.</p>
