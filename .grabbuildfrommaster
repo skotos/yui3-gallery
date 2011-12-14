@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -rf build
+mkdir -p build/gallery-textfield-labelled
+git archive --format=tar master:build/gallery-textfield-labelled | tar -xvC build/gallery-textfield-labelled/
+
