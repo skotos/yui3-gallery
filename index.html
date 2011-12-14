@@ -48,35 +48,62 @@
     <div class="description">
       YUI3 Gallery Modules
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
       <h2>Authors</h2>
       <p>Adam Moore (adamoore@yahoo-inc.com)<br/>YUI Builder (build@yuilibrary.com)<br/>Dav Glass (davglass@gmail.com)<br/>Luke Smith (lsmith@yahoo-inc.com)<br/>      </p>
-    
 
-    
-      <h2>Contact</h2>
+      <h2>Author of gallery-textfield-labelled module</h2>
       <p> (scott.david.tester@gmail.com)<br/>      </p>
-    
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/skotos/yui3-gallery/zipball/master">zip</a> or
-      <a href="https://github.com/skotos/yui3-gallery/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/skotos/yui3-gallery</pre>
-    </p>
+      <h2>Example</h2>
+      <div id='loginform'>
+        <input type="text" id="ubox" label="Username" />
+        <input type="password" id="pbox" label="Password" />
+        <button id='loginform_button' onclick='alert("Access Denied!");'>Log In</button>
+      </div>
+      <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+      <script type="text/javascript">
+      YUI({
+        groups: {
+          gallery: {
+            combine: false,
+            base: "http://skotos.github.com/yui3-gallery/build/",
+            root: "http://skotos.github.com/yui3-gallery/build/",
+            comboBase: "http://skotos.github.com/phploader/phploader/combo.php?",
+            modules: {
+              'gallery-textfield-labelled' : {
+                path : 'gallery-textfield-labelled/gallery-textfield-labelled-min.js',
+                type : 'js',
+                requires: ['node','event','event-key','widget']
+              }
+            }
+          },
+          gallerycss: {
+            combine: false,
+            comboBase: "http://skotos.github.com/phploader/phploader/combo.php?",
+            root: "http://skotos.github.com/yui3-gallery/build/",
+            base: "http://skotos.github.com/yui3-gallery/build/",
+            modules: {
+              'gallerycss-textfield-labelled' : {
+                path : 'gallery-textfield-labelled/assets/skins/sam/gallery-textfield-labelled-skin.css',
+                type : 'css'
+              }
+            }
+          }
+        }
+      }).use('node', 'gallery-textfield-labelled','gallerycss-textfield-labelled', function(Y){
+        var uBox = new TextfieldLabelled({
+          srcNode: '#ubox',
+          label: "Username"
+        }).render();
+        var pBox = new TextfieldLabelled({
+          srcNode: '#pbox',
+          label: "Password"
+        }).render();
+      });
+      </script>
+
+    <h2>Progress</h2>
+    <p> This project is still in the alpha stage.  Best to keep an eye on yuilibrary.com to see if and when it makes it into the gallery.</p>
 
     <div class="footer">
       get the source code on GitHub : <a href="https://github.com/skotos/yui3-gallery">skotos/yui3-gallery</a>

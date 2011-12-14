@@ -1,0 +1,45 @@
+/**
+ * contentBox and boundingBox CSS
+ * TODO: See how to move this to the core CSS as the core CSS doesn't seem to be automatically loading.
+ */
+.yui3-textfieldlabelled {
+  display: inline-block;
+}
+
+.yui3-textfieldlabelled-content {
+  position: relative;
+  display: block;
+  margin: 0px 2px;
+}
+
+/**
+ * textf (textfield) and label elements 
+ * TODO: divide properties between core and skin.
+ */
+.yui3-textfieldlabelled-textf,
+.yui3-textfieldlabelled-label{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.yui3-textfieldlabelled-textf{
+  z-index: 1;
+}
+
+.yui3-textfieldlabelled-label{
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  color:#404040;
+  font-style: italic;
+  padding: 3px;
+  z-index: 2;
+  cursor: text;
+}
+
+.yui3-textfieldlabelled-label.withcontent{
+  display: none;
+}
+
