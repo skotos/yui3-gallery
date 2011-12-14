@@ -5,7 +5,7 @@ var Lang = Y.Lang,
   Node = Y.Node;
 
 /* TextfieldLabelled class constructor */
-function TextfieldLabelled (config) {
+TextfieldLabelled = function(config) {
   TextfieldLabelled.superclass.constructor.apply(this, arguments);
 }
 
