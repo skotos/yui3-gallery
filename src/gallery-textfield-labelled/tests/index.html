@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textfield-Labelled tests</title>
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+
+  </head>
+  <body  class="yui3-skin-sam yui-skin-sam">
+    <h1>gallery-textfield-labelled tests</h1>
+    <h2>Basic tests</h2>
+    <h3>Raw TFL</h3>
+    <p>Raw functionality of the tfl.</p>
+    <input type="text" id="basictest" />
+    <h3>Password TFL</h3>
+    <input type="password" id="passwordtest" />
+    <h3>No id TFL</h3>
+    <div id="my-tfl-has-no-id">
+      <input type="text" />
+    </div>
+    <h2>node property tests (getters and setters)</h2>
+    To be completed
+    <h2>event binding tests</h2>
+    To be completed
+    <h2>markup cloning tests</h2>
+    <p>These tests are to check that the attributes/styles of the source Node are duplicated in the destination node as much as possible.</p>
+    To be completed.
+    <script type="text/javascript">
+/*jslint white: true, nomen: true, maxerr: 50, indent: 4 */
+/*global YUI*/
+      YUI({
+        filter:'debug',
+        combine:true,
+        groups: {
+          sp: {
+            base: '../../../build/',
+            combine: false,
+            modules: {
+              "gallery-textfield-labelled": {
+                path: 'gallery-textfield-labelled/gallery-textfield-labelled.js',
+                requires: ['node', 'widget', 'event', 'event-key'],
+                skinnable: true
+              }
+            }
+          }
+        }
+      }).use('gallery-textfield-labelled', function(Y) {
+        "use strict";
+        var uBox = new TextfieldLabelled({
+          srcNode: '#basictest',
+          label: "Basic Test"
+        }).render();
+        var pBox = new TextfieldLabelled({
+          srcNode: '#passwordtest',
+          label: "Password Test"
+        }).render();
+        var pBox = new TextfieldLabelled({
+          srcNode: '#my-tfl-has-no-id input',
+          label: "No ID Test"
+        }).render();
+      });
+    </script>
+  </body>
+</html>
