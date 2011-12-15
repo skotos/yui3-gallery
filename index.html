@@ -3,24 +3,24 @@
 <head>
   <meta charset='utf-8'>
 
-  <title>skotos/yui3-gallery @ GitHub</title>
+  <title>skotos - yui3-gallery mods and stuff</title>
 
   <style type="text/css">
     body {
       margin-top: 1.0em;
-      background-color: #aa4521;
+      background-color: #111;
       font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
+      color: #fff;
     }
     #container {
       margin: 0 auto;
       width: 700px;
     }
-    h1 { font-size: 3.8em; color: #55bade; margin-bottom: 3px; }
+    h1 { font-size: 3.8em; color: #eee; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #55bade; }
-    h3 { text-align: center; color: #55bade; }
+    h2 { font-size: 1.5em; color: #eee; }
+    h3 { text-align: center; color: #eee; }
     a { color: #55bade; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
@@ -32,26 +32,19 @@
 
 <body>
   <div id="container">
-    <div class="download">
-      <a href="https://github.com/skotos/yui3-gallery/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/skotos/yui3-gallery/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
     <h1><a href="https://github.com/yui/yui3-gallery">yui3-gallery</a>
       <span class="small"><a href="https://github.com/skotos/yui3-gallery">skotos' fork</a></span></h1>
 
+    
+
     <div class="description">
-      YUI3 Gallery Modules
+      My YUI3 Gallery Modules Projects:
     </div>
-      <h2>Authors of yui/yui3-gallery</h2>
-      <p>Adam Moore (adamoore@yahoo-inc.com)<br/>YUI Builder (build@yuilibrary.com)<br/>Dav Glass (davglass@gmail.com)<br/>Luke Smith (lsmith@yahoo-inc.com)<br/>      </p>
 
-      <h2>Author of gallery-textfield-labelled module</h2>
-      <p> (scott.david.tester@gmail.com)<br/>      </p>
-
-      <h2>Example</h2>
+    <h2>galley-textfield-labelled</h2>
+    This module is to insert a textfield label within the frame of the textfield itself.  This label
+ then disappears when a value is entered into the field.
+      <h3>Example</h3>
       <div id='loginform'>
         <input type="text" id="ubox" label="Username" />
         <input type="password" id="pbox" label="Password" />
@@ -86,14 +79,62 @@
       });
     </script>
 
-    <h2>Progress</h2>
+      <h3>Code</h3>
+<pre>
+&lt;input type="text" id="ubox" label="Username" /&gt;
+&lt;input type="password" id="pbox" label="Password" /&gt;
+&lt;script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+YUI({
+&nbsp;&nbsp;combine:true,
+&nbsp;&nbsp;groups: {
+&nbsp;&nbsp;&nbsp;&nbsp;sp: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base: 'build/',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;combine: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modules: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"gallery-textfield-labelled": {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: 'gallery-textfield-labelled/gallery-textfield-labelled.js',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requires: ['node', 'widget', 'event', 'event-key'],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skinnable: true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+}).use('gallery-textfield-labelled', function(Y) {
+&nbsp;&nbsp;var uBox = new TextfieldLabelled({
+&nbsp;&nbsp;&nbsp;&nbsp;srcNode: '#ubox',
+&nbsp;&nbsp;&nbsp;&nbsp;label: "Username"
+&nbsp;&nbsp;}).render();
+&nbsp;&nbsp;var pBox = new TextfieldLabelled({
+&nbsp;&nbsp;&nbsp;&nbsp;srcNode: '#pbox',
+&nbsp;&nbsp;&nbsp;&nbsp;label: "Password"
+&nbsp;&nbsp;}).render();
+});
+&lt;/script&gt;
+</pre>
+
+
+
+
+
+    <h3>Progress</h3>
     <p> This project is still in the alpha stage.  Best to keep an eye on yuilibrary.com to see if and when it makes it into the gallery.</p>
+
+    <h3>Links</h3>
+      <ul>
+        <li><a href='https://github.com/skotos/yui3-gallery/issues'>issues</a></li>
+        <li><a href='https://github.com/skotos/yui3-gallery/tree/master/src/gallery-textfield-labelled'>source</a></li>
+
+      </ul>
 
     <div class="footer">
       get the source code on GitHub : <a href="https://github.com/skotos/yui3-gallery">skotos/yui3-gallery</a>
     </div>
 
   </div>
+
+
+
 
 </body>
 </html>
