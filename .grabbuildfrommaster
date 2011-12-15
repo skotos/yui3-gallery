@@ -1,5 +1,11 @@
 #!/bin/bash
+echo "Bring in build..."
 rm -rf build
 mkdir -p build/gallery-textfield-labelled
 git archive --format=tar master:build/gallery-textfield-labelled | tar -xvC build/gallery-textfield-labelled/
 
+
+echo -e "\nBring in src..."
+rm -rf src
+mkdir -p src/gallery-textfield-labelled
+git archive --format=tar master:src/gallery-textfield-labelled | tar -xvC src/gallery-textfield-labelled/
